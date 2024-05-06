@@ -35,7 +35,7 @@ jobs:
         with:
           version: 9
       - name: Install
-        run: pnpm ci
+        run: pnpm i
       - name: Build
         run: pnpm run build
         env:
