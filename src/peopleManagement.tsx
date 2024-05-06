@@ -6,7 +6,7 @@ import persian_fa from "react-date-object/locales/persian_fa"
 import { DateObject } from "react-multi-date-picker";
 import { LiaUserMinusSolid,LiaUserPlusSolid,LiaDownloadSolid } from "react-icons/lia";
 import { content } from "./faContent";
-import JWT from 'expo-jwt';
+import AES from "crypto-js/aes"
 import { toast } from "react-toastify";
 
 function PeopleManagement() {
@@ -70,8 +70,10 @@ function PeopleManagement() {
       toast.error(<p style={{direction:"rtl"}}>{content.noDataError}</p>)
       return;
     }
-    const jwt = JWT.encode(persons, 'secret');
+    // const jwt = JWT.encode(persons, 'secret');
+    const jwt = AES.encrypt(JSON.stringify(persons),'secret').toString();
     const json = JSON.stringify({data:jwt});
+    // console.log(json)
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

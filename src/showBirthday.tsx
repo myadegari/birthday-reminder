@@ -3,7 +3,7 @@ import { useStore,Person } from './store'
 import { LiaCloudUploadAltSolid } from "react-icons/lia";
 import { TbFileIsr } from "react-icons/tb";
 import { content } from './faContent';
-import JWT from 'expo-jwt';
+import CryptoJS from "crypto-js"
 import classNames from 'classnames';
 import { toast } from 'react-toastify';
 
@@ -46,9 +46,9 @@ export default function ShowBirthday() {
         reader.onload = () => {
           const jsonData = JSON.parse(reader.result as string);
           try{
-            const data = JWT.decode(jsonData.data,'secret');
-            // removeAll();
-            data.forEach((person:Person) => {
+            const data = CryptoJS.AES.decrypt(jsonData.data,'secret').toString(CryptoJS.enc.Utf8);
+            const finalData = JSON.parse(data);
+            finalData.forEach((person:Person) => {
                 if(!persons.find((item) => item.id === person.id)){
                 addPerson(person)
                 }
