@@ -89,7 +89,7 @@ function PeopleManagement() {
 
   return (
     <>
-        <form onSubmit={handleSubmit} className="grid gap-5 p-2 md:mb-0 mb-3">
+        <form onSubmit={handleSubmit} className="grid gap-5 p-2 sm:mb-0 mb-3">
           <fieldset className="bg-slate-50 rounded-md p-4 drop-shadow-md">
             <legend className="bg-slate-50 px-4 py-2 rounded-lg">{content.name}</legend>
             <input value={formData.name} type='text' name="name"
@@ -121,7 +121,7 @@ function PeopleManagement() {
         </form>
 
 
-      <div className='flex flex-col divide-y-2 border-dashed px-5 pt-5 border-blue-200 border-t-2 md:border-r-2 md:pr-8 md:border-t-0 md:pt-2 md:px-0'>
+      <div className='flex flex-col divide-y-2 border-dashed px-5 pt-5 border-blue-200 border-t-2 sm:border-r-2 sm:pr-8 sm:border-t-0 sm:pt-2 sm:px-0'>
       {persons.length > 0 ?(
  
           persons.map(person => (
