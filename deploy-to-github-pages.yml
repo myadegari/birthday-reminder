@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REACT_APP_GITHUB_PAGES: true
+        run: |
+          npm run build
+          npm run deploy
+
+      - name: Deploy to GitHub Pages
+        uses: actions/github-pages@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: 'build'
