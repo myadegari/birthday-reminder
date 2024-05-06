@@ -1,26 +1,35 @@
-import { Outlet,NavLink } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { content } from "./faContent";
 import classNames from 'classnames';
+import { useLocation,useNavigate } from "react-router-dom";
 
 export default function Layout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const status = {
+    index: location.pathname === '/birthday-reminder/',
+    persons:location.pathname == '/birthday-reminder/persons'
+  };
   return (
     <div>
         <span className="flex gap-[2px]">
-        <NavLink 
-        className={(status)=>
-            classNames('py-2 px-4 rounded-lg rounded-b-none',
-            {'bg-slate-100':status.isActive,
-            'bg-slate-300':!status.isActive})
-        }
-        to="/birthday-reminder/">
-            {content.showBirthdays}</NavLink>
-        <NavLink 
-         className={(status)=>
-        classNames('py-2 px-4 rounded-lg rounded-b-none',
-        {'bg-slate-100':status.isActive,
-         'bg-slate-300':!status.isActive})
-    }
-        to="/birthday-reminder/persons">{content.addPersonToBirthdays}</NavLink>
+        <p
+         className={ classNames('py-2 px-4 rounded-lg rounded-b-none cursor-pointer',
+        {'bg-slate-100':status.index,
+         'bg-slate-300':!status.index})}
+         onClick={()=>{
+         navigate('/birthday-reminder/')
+        }}
+        >
+            {content.showBirthdays}</p>
+            <p
+         className={ classNames('py-2 px-4 rounded-lg rounded-b-none cursor-pointer',
+        {'bg-slate-100':status.persons,
+         'bg-slate-300':!status.persons})}
+         onClick={()=>{
+         navigate('/birthday-reminder/persons')
+        }}
+        >{content.addPersonToBirthdays}</p>
         </span>
     <div className='grid place-items-center bg-slate-100 rounded-lg rounded-tr-none p-5 md:gap-8 md:grid-cols-2  '>
         <Outlet/>
