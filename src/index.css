@@ -9,9 +9,9 @@
       margin: 0;
     }
   }
-  
+  @layer base {
   @font-face {
-      font-family: Samim;
+      font-family: "Samim";
       src: url('./assets/fonts/Farsi-Digits/Samim-FD.eot');
       src: url('./assets/fonts/Farsi-Digits/Samim-FD.eot?#iefix') format('FontName-opentype'),
            url('./assets/fonts/Farsi-Digits/Samim-FD.woff') format('woff'),
@@ -29,9 +29,11 @@
       font-weight: bold;
       font-style: normal;
     }
-  
+  }
+  @layer base {
   *,*::after,*::before{
     box-sizing: border-box;
       font-family: "Samim";
   
   }
+}

@@ -12,7 +12,7 @@ export default function Layout() {
             {'bg-slate-100':status.isActive,
             'bg-slate-300':!status.isActive})
         }
-        to="/">
+        to="/birthday-reminder/">
             {content.showBirthdays}</NavLink>
         <NavLink 
          className={(status)=>
@@ -20,7 +20,7 @@ export default function Layout() {
         {'bg-slate-100':status.isActive,
          'bg-slate-300':!status.isActive})
     }
-        to="/persons">{content.addPersonToBirthdays}</NavLink>
+        to="/birthday-reminder/persons">{content.addPersonToBirthdays}</NavLink>
         </span>
     <div className='grid place-items-center bg-slate-100 rounded-lg rounded-tr-none p-5 md:gap-8 md:grid-cols-2  '>
         <Outlet/>

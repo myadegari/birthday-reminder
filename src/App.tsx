@@ -13,8 +13,8 @@ function App() {
     <>
       <Routes>
         <Route path='birthday-reminder/' element={<Layout/>}>
-        <Route index element={<ShowBirthday/>}/>
-        <Route path='persons' element={<PeopleManagement/>}/>   
+          <Route index element={<ShowBirthday/>}/>
+          <Route path='persons' element={<PeopleManagement/>}/>   
         </Route>
       </Routes>
     </>
