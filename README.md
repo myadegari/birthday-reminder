@@ -17,5 +17,5 @@
 ![Github Pages](https://img.shields.io/badge/Github%20Pages-121013?logo=github&logoColor=white)
 
 <p align="center">
-  <img src="readme.jpg" />
+  <img src="readme.png" />
 </p>

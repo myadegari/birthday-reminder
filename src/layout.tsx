@@ -31,7 +31,7 @@ export default function Layout() {
         }}
         >{content.addPersonToBirthdays}</p>
         </span>
-    <div className='grid place-items-center bg-slate-100 rounded-lg rounded-tr-none p-5 md:gap-8 md:grid-cols-2  '>
+    <div className='sm:w-[600px] w-[100dvw] grid place-items-center bg-slate-100 rounded-lg rounded-tr-none p-5 md:grid-cols-2'>
         <Outlet/>
   </div>
 
