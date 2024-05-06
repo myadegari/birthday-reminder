@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+  
+  @font-face {
+      font-family: Samim;
+      src: url('./assets/fonts/Farsi-Digits/Samim-FD.eot');
+      src: url('./assets/fonts/Farsi-Digits/Samim-FD.eot?#iefix') format('FontName-opentype'),
+           url('./assets/fonts/Farsi-Digits/Samim-FD.woff') format('woff'),
+           url('./assets/fonts/Farsi-Digits/Samim-FD.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  
+    @font-face {
+      font-family: "Samim";
+      src: url('./assets/fonts/Farsi-Digits/Samim-Bold-FD.eot');
+      src: url('./assets/fonts/Farsi-Digits/Samim-Bold-FD.eot?#iefix') format('FontName-opentype'),
+           url('./assets/fonts/Farsi-Digits/Samim-Bold-FD.woff') format('woff'),
+           url('./assets/fonts/Farsi-Digits/Samim-Bold-FD.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+  
+  *,*::after,*::before{
+    box-sizing: border-box;
+      font-family: "Samim";
+  
+  }
