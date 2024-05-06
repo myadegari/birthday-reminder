@@ -1,5 +1,5 @@
 import './App.css'
-import { createBrowserRouter,RouterProvider } from 'react-router-dom'
+import { Route,Routes } from 'react-router-dom'
 import PeopleManagement from './peopleManagement'
 import ShowBirthday from './showBirthday'
 import Layout from './layout'
@@ -8,26 +8,15 @@ import Layout from './layout'
 function App() {
 
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element:<Layout/>,
-      errorElement:<h1>404 Not Found</h1>,
-      children: [
-        {
-          path: '/persons',
-          element: <PeopleManagement />
-        },
-        {
-          index: true,
-          element: <ShowBirthday />
-        }
-      ]
-    }
-  ])
+ 
   return (
     <>
-    <RouterProvider router={router}/>
+      <Routes>
+        <Route path='birthday-reminder/' element={<Layout/>}>
+        <Route index element={<ShowBirthday/>}/>
+        <Route path='persons' element={<PeopleManagement/>}/>   
+        </Route>
+      </Routes>
     </>
   )
 }
