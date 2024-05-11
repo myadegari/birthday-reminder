@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily:{
+      body:['Shabnam','Inter','sans-serif'],
+    },
     extend: {},
   },
   plugins: [],

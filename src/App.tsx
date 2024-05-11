@@ -12,9 +12,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='birthday-reminder/' element={<Layout/>}>
+        <Route path='/birthday-reminder/' element={<Layout/>}>
           <Route index element={<ShowBirthday/>}/>
-          <Route path='persons' element={<PeopleManagement/>}/>   
+          <Route path='/birthday-reminder/persons' element={<PeopleManagement/>}/>   
         </Route>
       </Routes>
     </>

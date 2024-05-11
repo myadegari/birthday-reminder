@@ -9,7 +9,7 @@ import { BrowserRouter } from 'react-router-dom'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
   <BrowserRouter>
-    <div className='grid h-[100vh] w-[100vw] place-items-center bg-slate-500 overflow-x-hidden'>
+    <div className='grid h-[100vh] w-[100vw] place-items-center bg-slate-500 overflow-x-hidden font-body'>
     <App />
     </div>
     <ToastContainer />
